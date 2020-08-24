@@ -13,7 +13,7 @@ global.config = {
 
 client.on("ready", () => {
   client.user.setActivity(`#help`);
-  schedule.scheduleJob("45 * * * *", async ()=>{
+  schedule.scheduleJob("0 * * * *", async ()=>{
     await restAllDwarfs()
   });  
 });
