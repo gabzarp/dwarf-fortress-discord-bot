@@ -2,6 +2,8 @@ const {Client, RichEmbed} = require("discord.js");
 require('dotenv').config()
 const { router } = require("./services/CommandRouterServices");
 const { createFortress } = require("./controllers/FortressController");
+const { restAllDwarfs } = require("./controllers/DwarfController");
+var schedule = require('node-schedule');
 
 const client = new Client();
 global.config = {
@@ -11,7 +13,9 @@ global.config = {
 
 client.on("ready", () => {
   client.user.setActivity(`#help`);
-
+  schedule.scheduleJob("0 0 0 /1 * *", ()=>{
+    restAllDwarfs()
+  });  
 });
 
 client.on("guildCreate", guild => {

@@ -64,6 +64,9 @@ const dwarfController = {
         var dwarf = await Dwarf.findOne({userId: message.author.id});
         message.channel.send(`${dwarf.money} gold coins`)
 
+    },
+    restAllDwarfs: async ()=>{
+        var dwarf = await Dwarf.update({stamina: 3});
     }
 }
 module.exports = dwarfController;
