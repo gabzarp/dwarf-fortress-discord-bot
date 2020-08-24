@@ -66,7 +66,7 @@ const dwarfController = {
 
     },
     restAllDwarfs: async ()=>{
-        var dwarf = await Dwarf.update({stamina: 3});
+        var dwarf = await Dwarf.updateMany({}, { $set: { stamina: 3 } });
     }
 }
 module.exports = dwarfController;
