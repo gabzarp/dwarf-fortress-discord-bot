@@ -32,7 +32,7 @@ const fortressController = {
         console.log(fortress)
         var levels = fortress.levels.map(level => {
             console.log(level)
-            return {name: `Level: ${level.level}`, value: `[ ${typeof level.building.name !== "undefined" ? level.building.name.toUpperCase() : 'EMPTY BUILDING'} ]`}
+            return {name: `Level: ${level.level}`, value: `[ ${typeof level.building !== "undefined" ? level.building.name.toUpperCase() : 'EMPTY BUILDING'} ]`}
         });
         const exampleEmbed = new Discord.MessageEmbed()
         .setColor('#0099ff')
